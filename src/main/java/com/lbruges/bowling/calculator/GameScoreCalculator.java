@@ -1,4 +1,4 @@
-package com.lbruges.bowling.controller;
+package com.lbruges.bowling.calculator;
 
 import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.model.score.IScore;

@@ -2,7 +2,7 @@ package com.lbruges.bowling.controller;
 
 import com.lbruges.bowling.board.impl.PlayerGameBoard;
 import com.lbruges.bowling.model.frame.IFrame;
-import com.lbruges.bowling.model.game.impl.Game;
+import com.lbruges.bowling.board.impl.Game;
 import lombok.Setter;
 
 import java.util.LinkedList;
@@ -20,10 +20,6 @@ public class BowlingGame {
     public void registerPlayerGame(String playerName, List<IFrame> gameFrames) {
         Game game = new Game(playerName);
         game.setFrameList(gameFrames);
-
-        GameScoreCalculator calculator = new GameScoreCalculator(gameFrames);
-        game.setScoreList(calculator.scoreGame());
-
         game.registerObserver(new PlayerGameBoard());
 
         playerGames.add(game);

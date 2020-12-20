@@ -1,8 +1,9 @@
-package com.lbruges.bowling.model.game.impl;
+package com.lbruges.bowling.board.impl;
 
 import com.lbruges.bowling.board.BoardObserver;
+import com.lbruges.bowling.calculator.GameScoreCalculator;
 import com.lbruges.bowling.model.frame.IFrame;
-import com.lbruges.bowling.model.game.IGame;
+import com.lbruges.bowling.board.IGame;
 import com.lbruges.bowling.model.score.IScore;
 import lombok.Data;
 
@@ -20,6 +21,12 @@ public class Game implements IGame {
     public Game(String playerName) {
         this.playerName = playerName;
         observers = new LinkedList<>();
+    }
+
+    public void setFrameList(List<IFrame> frameList) {
+        this.frameList = frameList;
+        GameScoreCalculator scoreCalculator = new GameScoreCalculator(frameList);
+        setScoreList(scoreCalculator.scoreGame());
     }
 
     @Override

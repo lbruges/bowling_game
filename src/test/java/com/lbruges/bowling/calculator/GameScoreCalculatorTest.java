@@ -1,6 +1,6 @@
-package com.lbruges.bowling.game;
+package com.lbruges.bowling.calculator;
 
-import com.lbruges.bowling.controller.GameScoreCalculator;
+import com.lbruges.bowling.calculator.GameScoreCalculator;
 import com.lbruges.bowling.model.score.IScore;
 import com.lbruges.bowling.utils.TestUtils;
 import org.junit.jupiter.api.Assertions;

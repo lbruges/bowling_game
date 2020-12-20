@@ -1,4 +1,4 @@
-package com.lbruges.bowling.model.game;
+package com.lbruges.bowling.board;
 
 import com.lbruges.bowling.board.BoardSubject;
 import com.lbruges.bowling.model.frame.IFrame;

@@ -4,7 +4,7 @@ import com.lbruges.bowling.exception.ApplicationException;
 import com.lbruges.bowling.inputhandling.parser.FrameParser;
 import com.lbruges.bowling.inputhandling.parser.RollParser;
 import com.lbruges.bowling.model.frame.IFrame;
-import com.lbruges.bowling.model.game.impl.Game;
+import com.lbruges.bowling.board.impl.Game;
 import com.lbruges.bowling.model.roll.IRoll;
 import org.apache.commons.lang3.StringUtils;
 
