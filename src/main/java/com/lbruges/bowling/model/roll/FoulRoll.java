@@ -11,7 +11,7 @@ public class FoulRoll implements IRoll {
 
     @Override
     public String toString() {
-        return Constants.FOUL_REP + Constants.ROLL_BASE_BLANK_SPACE.substring(1);
+        return Constants.getValueWithTabFormat(Constants.FOUL_REP);
     }
 
 }

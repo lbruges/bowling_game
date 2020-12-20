@@ -30,7 +30,7 @@ public class Roll implements IRoll {
     public String toString() {
         String knockedPinsStr = String.valueOf(knockedPins);
 
-        return knockedPinsStr + Constants.ROLL_BASE_BLANK_SPACE.substring(knockedPinsStr.length());
+        return Constants.getValueWithTabFormat(knockedPinsStr);
     }
 
 }
