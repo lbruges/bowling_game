@@ -3,8 +3,9 @@ package com.lbruges.bowling.model.roll.impl;
 import com.lbruges.bowling.exception.ApplicationException;
 import com.lbruges.bowling.exception.ExceptionEnum;
 import com.lbruges.bowling.model.roll.IRoll;
-import com.lbruges.bowling.utils.Constants;
 import lombok.NoArgsConstructor;
+
+import static com.lbruges.bowling.utils.UtilFunctions.getValueWithTabFormat;
 
 @NoArgsConstructor
 public class Roll implements IRoll {
@@ -29,9 +30,7 @@ public class Roll implements IRoll {
 
     @Override
     public String toString() {
-        String knockedPinsStr = String.valueOf(knockedPins);
-
-        return Constants.getValueWithTabFormat(knockedPinsStr);
+        return String.valueOf(knockedPins);
     }
 
 }

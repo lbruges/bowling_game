@@ -3,6 +3,8 @@ package com.lbruges.bowling.model.roll.impl;
 import com.lbruges.bowling.model.roll.IRoll;
 import com.lbruges.bowling.utils.Constants;
 
+import static com.lbruges.bowling.utils.UtilFunctions.getValueWithTabFormat;
+
 public class Foul implements IRoll {
 
     @Override
@@ -12,7 +14,7 @@ public class Foul implements IRoll {
 
     @Override
     public String toString() {
-        return Constants.getValueWithTabFormat(Constants.FOUL_REP);
+        return Constants.FOUL_REP;
     }
 
 }

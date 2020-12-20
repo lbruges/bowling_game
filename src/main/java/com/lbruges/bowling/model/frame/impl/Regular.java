@@ -4,6 +4,8 @@ import com.lbruges.bowling.model.frame.AbstractFrame;
 import com.lbruges.bowling.model.frame.FrameType;
 import com.lbruges.bowling.model.roll.IRoll;
 
+import static com.lbruges.bowling.utils.UtilFunctions.getValueWithTabFormat;
+
 public class Regular extends AbstractFrame {
 
     public Regular(IRoll firstRoll, IRoll secondRoll) {
@@ -16,7 +18,7 @@ public class Regular extends AbstractFrame {
     }
 
     public String toString() {
-        return firstRoll.toString() + secondRoll.toString();
+        return getValueWithTabFormat(firstRoll.toString()) + secondRoll.toString();
     }
 
 }
