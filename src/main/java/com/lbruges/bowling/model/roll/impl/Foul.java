@@ -1,8 +1,9 @@
-package com.lbruges.bowling.model.roll;
+package com.lbruges.bowling.model.roll.impl;
 
+import com.lbruges.bowling.model.roll.IRoll;
 import com.lbruges.bowling.utils.Constants;
 
-public class FoulRoll implements IRoll {
+public class Foul implements IRoll {
 
     @Override
     public int getKnockedPins() {

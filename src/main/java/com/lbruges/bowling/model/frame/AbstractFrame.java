@@ -1,39 +1,27 @@
 package com.lbruges.bowling.model.frame;
 
 import com.lbruges.bowling.model.roll.IRoll;
-import com.lbruges.bowling.model.roll.Roll;
+import com.lbruges.bowling.model.roll.impl.Roll;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-@Getter
 @AllArgsConstructor
-public class Frame {
+public abstract class AbstractFrame implements IFrame {
 
     protected IRoll firstRoll;
     protected IRoll secondRoll;
 
-    public Frame(IRoll firstRoll) {
+    public AbstractFrame(IRoll firstRoll) {
         this.firstRoll = firstRoll;
-        this.secondRoll = new Roll();
+        secondRoll = new Roll();
     }
 
+    @Override
     public int getTotalKnockedPins() {
         return firstRoll.getKnockedPins() + secondRoll.getKnockedPins();
     }
 
+    @Override
     public int getFirstRollKnockedPins() {
         return firstRoll.getKnockedPins();
     }
-
-    public boolean isStrike() {
-        return false;
-    }
-    public boolean isSpare() {
-        return false;
-    }
-
-    public String toString() {
-        return firstRoll.toString() + secondRoll.toString();
-    }
-
 }

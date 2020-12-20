@@ -1,25 +1,30 @@
 package com.lbruges.bowling.game;
 
-import com.lbruges.bowling.model.frame.Frame;
+import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.utils.Constants;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+import static com.lbruges.bowling.model.frame.FrameType.STRIKE;
+
 @AllArgsConstructor
 public class BowlingGame {
 
-    private List<Frame> frames;
+    private List<IFrame> frames;
 
     public int scoreGame() {
         int score = 0;
         for (int i = 0; i < Constants.REGULAR_GAME_FRAMES; i++) {
-            if (frames.get(i).isStrike()) {
-                score += frames.get(i).getTotalKnockedPins() + getStrikeBonus(i);
-            } else if (frames.get(i).isSpare()) {
-                score += frames.get(i).getTotalKnockedPins() + getSpareBonus(i);
-            } else {
-                score += frames.get(i).getTotalKnockedPins();
+            switch (frames.get(i).getFrameType()) {
+                case STRIKE:
+                    score += frames.get(i).getTotalKnockedPins() + getStrikeBonus(i);
+                    break;
+                case SPARE:
+                    score += frames.get(i).getTotalKnockedPins() + getSpareBonus(i);
+                    break;
+                default:
+                    score += frames.get(i).getTotalKnockedPins();
             }
         }
         return score;
@@ -31,7 +36,7 @@ public class BowlingGame {
 
     private int getStrikeBonus(int i) {
         int bonus = frames.get(i+1).getTotalKnockedPins();
-        if (frames.get(i+1).isStrike()) {
+        if (STRIKE.equals(frames.get(i+1).getFrameType())) {
             bonus += frames.get(i+2).getFirstRollKnockedPins();
         }
 

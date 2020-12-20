@@ -1,7 +1,8 @@
-package com.lbruges.bowling.model.roll;
+package com.lbruges.bowling.model.roll.impl;
 
 import com.lbruges.bowling.exception.ApplicationException;
 import com.lbruges.bowling.exception.ExceptionEnum;
+import com.lbruges.bowling.model.roll.IRoll;
 import com.lbruges.bowling.utils.Constants;
 import lombok.NoArgsConstructor;
 
