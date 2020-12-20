@@ -1,4 +1,4 @@
-package com.lbruges.bowling.model.player;
+package com.lbruges.bowling.model.game;
 
 import com.lbruges.bowling.board.BoardSubject;
 import com.lbruges.bowling.model.frame.IFrame;
@@ -6,9 +6,9 @@ import com.lbruges.bowling.model.score.IScore;
 
 import java.util.List;
 
-public interface IPlayer extends BoardSubject {
+public interface IGame extends BoardSubject {
 
-    String getName();
+    String getPlayerName();
     List<IFrame> getFrameList();
     List<IScore> getScoreList();
 

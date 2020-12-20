@@ -11,7 +11,7 @@ import static com.lbruges.bowling.utils.Constants.MAX_GAME_FRAMES;
 import static com.lbruges.bowling.utils.UtilFunctions.collectionToJoinedStr;
 import static com.lbruges.bowling.utils.UtilFunctions.generateFrameTitle;
 
-public class PlayerBoard implements BoardObserver {
+public class PlayerGameBoard implements BoardObserver {
 
     private static final String FRAME_TITLE_FORMAT = "Pinfalls\t%s";
     private static final String SCORE_TITLE_FORMAT = "Score\t\t%s";
