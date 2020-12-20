@@ -10,19 +10,15 @@ public class Roll implements IRoll {
 
     private int knockedPins;
 
-    public Roll(String rolRep) throws ApplicationException {
-        try {
-            knockedPins = Integer.valueOf(rolRep);
-            if (knockedPins < 0) {
-                throw new ApplicationException(ExceptionEnum.NEGATIVE_ROLL_VALUE);
-            }
-
-            if (knockedPins > 10) {
-                throw new ApplicationException(ExceptionEnum.GREATER_ROLL_VALUE);
-            }
-        } catch (Exception e) {
-            throw new ApplicationException(ExceptionEnum.BAD_ROLL_VALUE, e);
+    public Roll(int knockedPins) throws ApplicationException {
+        if (knockedPins < 0) {
+            throw new ApplicationException(ExceptionEnum.NEGATIVE_ROLL_VALUE);
         }
+
+        if (knockedPins > 10) {
+            throw new ApplicationException(ExceptionEnum.GREATER_ROLL_VALUE);
+        }
+        this.knockedPins = knockedPins;
     }
 
     @Override
@@ -30,6 +26,7 @@ public class Roll implements IRoll {
         return knockedPins;
     }
 
+    @Override
     public String toString() {
         String knockedPinsStr = String.valueOf(knockedPins);
 

@@ -1,11 +1,12 @@
 package com.lbruges.bowling.model.frame;
 
-import com.lbruges.bowling.model.roll.Roll;
-import com.lbruges.bowling.utils.Constants;
+import com.lbruges.bowling.model.roll.IRoll;
 
 public class Spare extends Frame {
 
-    public Spare(Roll firstRoll, Roll secondRoll) {
+    private static final String SPARE_PLUS_BLANK_SPACE = "   /";
+
+    public Spare(IRoll firstRoll, IRoll secondRoll) {
         super(firstRoll, secondRoll);
     }
 
@@ -16,6 +17,6 @@ public class Spare extends Frame {
 
     @Override
     public String toString() {
-        return super.firstRoll.toString() + Constants.SPARE_PLUS_BLANK_SPACE;
+        return super.firstRoll.toString() + SPARE_PLUS_BLANK_SPACE;
     }
 }

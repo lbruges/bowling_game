@@ -1,5 +1,6 @@
 package com.lbruges.bowling.model.frame;
 
+import com.lbruges.bowling.model.roll.IRoll;
 import com.lbruges.bowling.model.roll.Roll;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,13 +9,13 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Frame {
 
-    public Frame(Roll firstRoll) {
+    protected IRoll firstRoll;
+    protected IRoll secondRoll;
+
+    public Frame(IRoll firstRoll) {
         this.firstRoll = firstRoll;
         this.secondRoll = new Roll();
     }
-
-    protected Roll firstRoll;
-    protected Roll secondRoll;
 
     public int getTotalKnockedPins() {
         return firstRoll.getKnockedPins() + secondRoll.getKnockedPins();
