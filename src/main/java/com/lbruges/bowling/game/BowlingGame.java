@@ -1,9 +1,12 @@
 package com.lbruges.bowling.game;
 
 import com.lbruges.bowling.model.frame.IFrame;
+import com.lbruges.bowling.model.score.IScore;
+import com.lbruges.bowling.model.score.impl.FrameScore;
 import com.lbruges.bowling.utils.Constants;
 import lombok.AllArgsConstructor;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import static com.lbruges.bowling.model.frame.FrameType.STRIKE;
@@ -13,9 +16,10 @@ public class BowlingGame {
 
     private List<IFrame> frames;
 
-    public int scoreGame() {
+    public List<IScore> scoreGame() {
+        List<IScore> scores = new LinkedList<>();
         int score = 0;
-        for (int i = 0; i < Constants.REGULAR_GAME_FRAMES; i++) {
+        for (int i = 0; i < Constants.MAX_GAME_FRAMES; i++) {
             switch (frames.get(i).getFrameType()) {
                 case STRIKE:
                     score += frames.get(i).getTotalKnockedPins() + getStrikeBonus(i);
@@ -26,8 +30,9 @@ public class BowlingGame {
                 default:
                     score += frames.get(i).getTotalKnockedPins();
             }
+            scores.add(new FrameScore(score));
         }
-        return score;
+        return scores;
     }
 
     private int getSpareBonus(int i) {
