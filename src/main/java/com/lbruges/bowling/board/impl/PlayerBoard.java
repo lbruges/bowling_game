@@ -4,6 +4,7 @@ import com.lbruges.bowling.board.BoardObserver;
 import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.model.score.IScore;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static com.lbruges.bowling.utils.Constants.MAX_GAME_FRAMES;
@@ -29,15 +30,12 @@ public class PlayerBoard implements BoardObserver {
     @Override
     public void display() {
         String frameTitle = generateFrameTitle(MAX_GAME_FRAMES);
-        System.out.println(frameTitle);
-
-        System.out.println(playerName);
-
         String framesToDisplay = String.format(FRAME_TITLE_FORMAT, collectionToJoinedStr(frameList, "\t"));
-        System.out.println(framesToDisplay);
-
         String scoresToDisplay = String.format(SCORE_TITLE_FORMAT, collectionToJoinedStr(scoreList, "\t\t"));
-        System.out.println(scoresToDisplay);
+
+        String boardStr = collectionToJoinedStr(Arrays.asList(frameTitle, playerName, framesToDisplay, scoresToDisplay),
+                "\n");
+        System.out.println(boardStr);
     }
 
 }
