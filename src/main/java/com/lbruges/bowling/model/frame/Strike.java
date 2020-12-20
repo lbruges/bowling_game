@@ -19,7 +19,7 @@ public class Strike extends Frame {
 
     @Override
     public String toString() {
-        return STRIKE_PLUS_BLANK_SPACE + ROLL_BASE_BLANK_SPACE;
+        return ROLL_BASE_BLANK_SPACE + STRIKE_PLUS_BLANK_SPACE;
     }
 
 }

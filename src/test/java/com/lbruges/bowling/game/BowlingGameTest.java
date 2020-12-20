@@ -25,10 +25,22 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void scoreGame_allFramesAreSameSpars() {
+    public void scoreGame_allFramesAreSameSpares() {
         // All frames are 5 + 5 spares
         BowlingGame bowlingGame = new BowlingGame(TestUtils.generateAllSameSparesFrames());
         Assertions.assertEquals(150, bowlingGame.scoreGame());
+    }
+
+    @Test
+    public void scoreGame_testJeffGame() {
+        BowlingGame bowlingGame = new BowlingGame(TestUtils.getJeffGameFrames());
+        Assertions.assertEquals(167, bowlingGame.scoreGame());
+    }
+
+    @Test
+    public void scoreGame_testJohnGame() {
+        BowlingGame bowlingGame = new BowlingGame(TestUtils.getJohnGameFrames());
+        Assertions.assertEquals(151, bowlingGame.scoreGame());
     }
 
 }

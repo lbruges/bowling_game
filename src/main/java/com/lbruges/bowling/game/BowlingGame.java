@@ -30,11 +30,9 @@ public class BowlingGame {
     }
 
     private int getStrikeBonus(int i) {
-        int bonus;
+        int bonus = frames.get(i+1).getTotalKnockedPins();
         if (frames.get(i+1).isStrike()) {
-            bonus = frames.get(i+1).getTotalKnockedPins() + frames.get(i+2).getTotalKnockedPins();
-        } else {
-            bonus = frames.get(i+1).getTotalKnockedPins() + frames.get(i+2).getFirstRollKnockedPins();
+            bonus += frames.get(i+2).getFirstRollKnockedPins();
         }
 
         return bonus;
