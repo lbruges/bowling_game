@@ -1,4 +1,4 @@
-package com.lbruges.bowling.game;
+package com.lbruges.bowling.controller;
 
 import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.model.score.IScore;
@@ -12,7 +12,7 @@ import java.util.List;
 import static com.lbruges.bowling.model.frame.FrameType.STRIKE;
 
 @AllArgsConstructor
-public class BowlingGame {
+public class GameScoreCalculator {
 
     private List<IFrame> frames;
 
