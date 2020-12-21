@@ -28,8 +28,7 @@ public class BowlingGame {
      * @param gameFrames player game frames
      */
     public void registerPlayerGame(String playerName, List<IFrame> gameFrames) {
-        Game game = new Game(playerName);
-        game.setFrameList(gameFrames);
+        Game game = new Game(playerName, gameFrames);
         game.registerObserver(new PlayerGameBoard());
 
         playerGames.add(game);

@@ -15,8 +15,9 @@ public class Game implements BoardSubject {
     private List<IFrame> frameList;
     private List<BoardObserver> observers;
 
-    public Game(String playerName) {
+    public Game(String playerName, List<IFrame> frameList) {
         this.playerName = playerName;
+        this.frameList = frameList;
         observers = new LinkedList<>();
     }
 
