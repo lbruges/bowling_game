@@ -25,7 +25,6 @@ public class StringToFrameParser implements IParser<Map<String, List<String>>, M
     public Map<String, List<IFrame>> parseTo(Map<String, List<String>> strRollsPerPlayer) throws ApplicationException {
         Map<String, List<IFrame>> frameMap = new LinkedHashMap<>();
         for (Map.Entry<String, List<String>> entry : strRollsPerPlayer.entrySet()) {
-            // This was done to avoid lambda exception handling
             List<IRoll> rolls = ROLL_PARSER.parseTo(entry.getValue());
             List<IFrame> frames = FRAME_PARSER.parseTo(rolls);
             frameMap.put(entry.getKey(), frames);
