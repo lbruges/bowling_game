@@ -9,6 +9,11 @@ import com.lbruges.bowling.model.score.IScore;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Single player bowling game representation.
+ *
+ * @author Laura Bruges
+ */
 public class Game implements BoardSubject {
 
     private String playerName;

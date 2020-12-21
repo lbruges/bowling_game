@@ -28,6 +28,10 @@ public class AppRunnerIT {
         AppRunner.main(new String[]{String.format(TEST_FILES_FORMAT, "bowling_game")});
     }
 
+    /**
+     * Single perfect game.
+     * @throws ApplicationException
+     */
     @Test
     public void testPerfectGame() throws ApplicationException {
         AppRunner.main(new String[]{String.format(TEST_FILES_FORMAT, "perfect_game")});
