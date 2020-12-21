@@ -1,10 +1,9 @@
 package com.lbruges.bowling.inputhandling;
 
 import com.lbruges.bowling.exception.ApplicationException;
-import com.lbruges.bowling.inputhandling.parser.FrameParser;
-import com.lbruges.bowling.inputhandling.parser.RollParser;
+import com.lbruges.bowling.inputhandling.parser.impl.FrameParser;
+import com.lbruges.bowling.inputhandling.parser.impl.RollParser;
 import com.lbruges.bowling.model.frame.IFrame;
-import com.lbruges.bowling.board.impl.Game;
 import com.lbruges.bowling.model.roll.IRoll;
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,8 +19,6 @@ public class InputHandler {
     private static final RollParser ROLL_PARSER = new RollParser();
 
     public static Map<String, List<IFrame>> streamToFrameMap(Stream<String> lines) throws ApplicationException {
-        List<Game> games = new LinkedList<>();
-
         Map<String, List<String>> strRollsPerPlayer = new LinkedHashMap<>();
         lines.filter(l -> StringUtils.isNoneBlank(l))
                 .map(l -> l.split("\t"))

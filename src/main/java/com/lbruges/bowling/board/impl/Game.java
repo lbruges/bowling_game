@@ -27,7 +27,7 @@ public class Game implements BoardSubject {
         setScoreList(scoreCalculator.scoreGame());
     }
 
-    public void setScoreList(List<IScore> scoreList) {
+    private void setScoreList(List<IScore> scoreList) {
         this.scoreList = scoreList;
     }
 
