@@ -13,7 +13,6 @@ public class Game implements BoardSubject {
 
     private String playerName;
     private List<IFrame> frameList;
-    private List<IScore> scoreList;
     private List<BoardObserver> observers;
 
     public Game(String playerName) {
@@ -23,12 +22,6 @@ public class Game implements BoardSubject {
 
     public void setFrameList(List<IFrame> frameList) {
         this.frameList = frameList;
-        GameScoreCalculator scoreCalculator = new GameScoreCalculator(frameList);
-        setScoreList(scoreCalculator.scoreGame());
-    }
-
-    private void setScoreList(List<IScore> scoreList) {
-        this.scoreList = scoreList;
     }
 
     @Override
@@ -38,6 +31,7 @@ public class Game implements BoardSubject {
 
     @Override
     public void notifyObservers() {
+        List<IScore> scoreList = (new GameScoreCalculator(frameList)).scoreGame();
         for (BoardObserver o : observers) {
             o.update(playerName, frameList, scoreList);
         }
