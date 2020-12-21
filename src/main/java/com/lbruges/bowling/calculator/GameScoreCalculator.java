@@ -1,4 +1,4 @@
-package com.lbruges.bowling.controller;
+package com.lbruges.bowling.calculator;
 
 import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.model.score.IScore;
@@ -11,11 +11,20 @@ import java.util.List;
 
 import static com.lbruges.bowling.model.frame.FrameType.STRIKE;
 
+/**
+ * Holds the logic for game score calculation.
+ *
+ * @author Laura Bruges
+ */
 @AllArgsConstructor
 public class GameScoreCalculator {
 
     private List<IFrame> frames;
 
+    /**
+     * Calculates the score per frame.
+     * @return a list with scores per frame
+     */
     public List<IScore> scoreGame() {
         List<IScore> scores = new LinkedList<>();
         int score = 0;

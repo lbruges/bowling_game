@@ -5,7 +5,7 @@ import com.lbruges.bowling.controller.BowlingGame;
 import com.lbruges.bowling.exception.ApplicationException;
 import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.utils.Constants;
-import com.lbruges.bowling.utils.FrameFileReader;
+import com.lbruges.bowling.inputhandling.FrameFileReader;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;

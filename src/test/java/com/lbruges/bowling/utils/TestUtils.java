@@ -4,6 +4,8 @@ import com.lbruges.bowling.model.frame.IFrame;
 import com.lbruges.bowling.model.frame.impl.Regular;
 import com.lbruges.bowling.model.frame.impl.Spare;
 import com.lbruges.bowling.model.frame.impl.Strike;
+import com.lbruges.bowling.model.roll.IRoll;
+import com.lbruges.bowling.model.roll.impl.Dummy;
 import com.lbruges.bowling.model.roll.impl.Foul;
 import com.lbruges.bowling.model.roll.impl.Roll;
 
@@ -61,6 +63,23 @@ public class TestUtils {
         return frameList;
     }
 
+    public static List<IFrame> getJeffGameFramesLastSpare() {
+        List<IFrame> frameList = new LinkedList<>();
+        frameList.add(new Strike(new Roll(10)));
+        frameList.add(new Spare(new Roll(7), new Roll(3)));
+        frameList.add(new Regular(new Roll(9), new Roll(0)));
+        frameList.add(new Strike(new Roll(10)));
+        frameList.add(new Regular(new Roll(0), new Roll(8)));
+        frameList.add(new Spare(new Roll(8), new Roll(2)));
+        frameList.add(new Regular(new Foul(), new Roll(6)));
+        frameList.add(new Strike(new Roll(10)));
+        frameList.add(new Strike(new Roll(10)));
+        frameList.add(new Spare(new Roll(7), new Roll(3)));
+        frameList.add(new Regular(new Roll(8), new Dummy()));
+
+        return frameList;
+    }
+
     public static List<IFrame> getJohnGameFrames() {
         List<IFrame> frameList = new LinkedList<>();
         frameList.add(new Spare(new Roll(3), new Roll(7)));
@@ -76,6 +95,93 @@ public class TestUtils {
         frameList.add(new Regular(new Roll(9), new Roll(0)));
 
         return frameList;
+    }
+
+    public static List<IRoll> getJeffRollList() {
+        List<IRoll> rolls = new LinkedList<>();
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(7));
+        rolls.add(new Roll(3));
+        rolls.add(new Roll(9));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(8));
+        rolls.add(new Roll(2));
+        rolls.add(new Foul());
+        rolls.add(new Roll(6));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(8));
+        rolls.add(new Roll(1));
+
+        return rolls;
+    }
+
+    public static List<IRoll> getJeffRollListLastSpare() {
+        List<IRoll> rolls = new LinkedList<>();
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(7));
+        rolls.add(new Roll(3));
+        rolls.add(new Roll(9));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(8));
+        rolls.add(new Roll(2));
+        rolls.add(new Foul());
+        rolls.add(new Roll(6));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(7));
+        rolls.add(new Roll(3));
+        rolls.add(new Roll(1));
+
+        return rolls;
+    }
+
+    public static List<IRoll> getJeffRollListLastRegular() {
+        List<IRoll> rolls = new LinkedList<>();
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(7));
+        rolls.add(new Roll(3));
+        rolls.add(new Roll(9));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(0));
+        rolls.add(new Roll(8));
+        rolls.add(new Roll(2));
+        rolls.add(new Foul());
+        rolls.add(new Roll(6));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(7));
+        rolls.add(new Roll(2));
+
+        return rolls;
+    }
+
+    public static List<IRoll> getPerfectGameRollList() {
+        List<IRoll> rolls = new LinkedList<>();
+
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+        rolls.add(new Roll(10));
+
+        return rolls;
     }
 
 }

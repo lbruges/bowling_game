@@ -1,6 +1,5 @@
-package com.lbruges.bowling.game;
+package com.lbruges.bowling.calculator;
 
-import com.lbruges.bowling.controller.GameScoreCalculator;
 import com.lbruges.bowling.model.score.IScore;
 import com.lbruges.bowling.utils.TestUtils;
 import org.junit.jupiter.api.Assertions;
@@ -56,6 +55,14 @@ public class GameScoreCalculatorTest {
         GameScoreCalculator gameCalculator = new GameScoreCalculator(TestUtils.getJohnGameFrames());
         List<IScore> result = gameCalculator.scoreGame();
         Assertions.assertEquals(151, result.get(result.size() - 1).getScore());
+        Assertions.assertEquals(10, result.size());
+    }
+
+    @Test
+    public void scoreGame_testJeffSpare() {
+        GameScoreCalculator gameCalculator = new GameScoreCalculator(TestUtils.getJeffGameFramesLastSpare());
+        List<IScore> result = gameCalculator.scoreGame();
+        Assertions.assertEquals(155, result.get(result.size() - 1).getScore());
         Assertions.assertEquals(10, result.size());
     }
 

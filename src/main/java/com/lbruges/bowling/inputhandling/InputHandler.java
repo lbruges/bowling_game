@@ -1,10 +1,9 @@
 package com.lbruges.bowling.inputhandling;
 
 import com.lbruges.bowling.exception.ApplicationException;
-import com.lbruges.bowling.inputhandling.parser.FrameParser;
-import com.lbruges.bowling.inputhandling.parser.RollParser;
+import com.lbruges.bowling.inputhandling.parser.impl.FrameParser;
+import com.lbruges.bowling.inputhandling.parser.impl.RollParser;
 import com.lbruges.bowling.model.frame.IFrame;
-import com.lbruges.bowling.model.game.impl.Game;
 import com.lbruges.bowling.model.roll.IRoll;
 import org.apache.commons.lang3.StringUtils;
 
@@ -14,14 +13,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+/**
+ * Handles the conversion from the text file lines to a bowling frame list per player using roll lists as a basis.
+ *
+ * @author Laura Bruges
+ */
 public class InputHandler {
 
     private static final FrameParser FRAME_PARSER = new FrameParser();
     private static final RollParser ROLL_PARSER = new RollParser();
 
+    /**
+     * Converts file lines stream to a map holding the game frames per player.
+     * @param lines text file line stream
+     * @return game frames per player
+     * @throws ApplicationException in case any input validation fails
+     */
     public static Map<String, List<IFrame>> streamToFrameMap(Stream<String> lines) throws ApplicationException {
-        List<Game> games = new LinkedList<>();
-
         Map<String, List<String>> strRollsPerPlayer = new LinkedHashMap<>();
         lines.filter(l -> StringUtils.isNoneBlank(l))
                 .map(l -> l.split("\t"))
@@ -29,6 +37,7 @@ public class InputHandler {
 
         Map<String, List<IFrame>> frameMap = new LinkedHashMap<>();
         for (Map.Entry<String, List<String>> entry : strRollsPerPlayer.entrySet()) {
+            // This was done to avoid lambda exception handling
             List<IRoll> rolls = ROLL_PARSER.parseTo(entry.getValue());
             List<IFrame> frames = FRAME_PARSER.parseTo(rolls);
             frameMap.put(entry.getKey(), frames);

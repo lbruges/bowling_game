@@ -4,6 +4,11 @@ import com.lbruges.bowling.model.roll.IRoll;
 import com.lbruges.bowling.model.roll.impl.Roll;
 import lombok.AllArgsConstructor;
 
+/**
+ * Abstract class defining basic frame operations.
+ *
+ * @author Laura Bruges
+ */
 @AllArgsConstructor
 public abstract class AbstractFrame implements IFrame {
 

@@ -1,14 +1,13 @@
 package com.lbruges.bowling.model.roll.impl;
 
 import com.lbruges.bowling.model.roll.IRoll;
-import com.lbruges.bowling.utils.Constants;
 
 /**
- * Foul roll with a 0 value representation.
+ * Represents a pseudo roll for completing a possible extra roll (Spare as last regular frame).
  *
  * @author Laura Bruges
  */
-public class Foul implements IRoll {
+public class Dummy implements IRoll {
 
     @Override
     public int getKnockedPins() {
@@ -17,7 +16,6 @@ public class Foul implements IRoll {
 
     @Override
     public String toString() {
-        return Constants.FOUL_REP;
+        return "";
     }
-
 }

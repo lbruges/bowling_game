@@ -3,6 +3,11 @@ package com.lbruges.bowling.model.score.impl;
 import com.lbruges.bowling.model.score.IScore;
 import lombok.AllArgsConstructor;
 
+/**
+ * Model to hold per frame score.
+ *
+ * @author Laura Bruges
+ */
 @AllArgsConstructor
 public class FrameScore implements IScore {
 
