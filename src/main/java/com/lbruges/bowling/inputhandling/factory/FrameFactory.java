@@ -7,6 +7,7 @@ import com.lbruges.bowling.model.frame.impl.Regular;
 import com.lbruges.bowling.model.frame.impl.Spare;
 import com.lbruges.bowling.model.frame.impl.Strike;
 import com.lbruges.bowling.model.roll.IRoll;
+import com.lbruges.bowling.model.roll.impl.Dummy;
 
 import java.util.List;
 
@@ -29,6 +30,11 @@ public class FrameFactory {
 
         if (firstRoll.getKnockedPins() == 10) {
             return new Strike(firstRoll);
+        }
+
+        // Taking into account a last regular spare as possible scenario
+        if ((i + 1) == rolls.size()) {
+            return new Regular(firstRoll, new Dummy());
         }
 
         IRoll secondRoll = rolls.get(i + 1);

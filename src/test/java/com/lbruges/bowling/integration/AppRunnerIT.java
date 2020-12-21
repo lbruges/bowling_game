@@ -47,12 +47,21 @@ public class AppRunnerIT {
     }
 
     /**
-     * Includes two regular valid games + a perfect game + all zeroes game + all fouls game
+     * Tests a single player zeroes game.
      * @throws ApplicationException
      */
     @Test
-    public void allValidBowlingGame() throws ApplicationException {
-        AppRunner.main(new String[]{String.format(TEST_FILES_FORMAT, "complete_bowling_game")});
+    public void singlePlayerValidAllZeroesGame() throws ApplicationException {
+        AppRunner.main(new String[]{String.format(TEST_FILES_FORMAT, "single_player_zeroes")});
+    }
+
+    /**
+     * Tests Jeff's game with last regular play set to Spare.
+     * @throws ApplicationException
+     */
+    @Test
+    public void singlePlayerLastSpare() throws ApplicationException {
+        AppRunner.main(new String[]{String.format(TEST_FILES_FORMAT, "jeff_game_last_spare")});
     }
 
 }

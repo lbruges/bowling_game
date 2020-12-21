@@ -58,4 +58,12 @@ public class GameScoreCalculatorTest {
         Assertions.assertEquals(10, result.size());
     }
 
+    @Test
+    public void scoreGame_testJeffSpare() {
+        GameScoreCalculator gameCalculator = new GameScoreCalculator(TestUtils.getJeffGameFramesLastSpare());
+        List<IScore> result = gameCalculator.scoreGame();
+        Assertions.assertEquals(155, result.get(result.size() - 1).getScore());
+        Assertions.assertEquals(10, result.size());
+    }
+
 }
