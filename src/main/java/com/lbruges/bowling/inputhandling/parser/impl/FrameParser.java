@@ -11,6 +11,10 @@ import com.lbruges.bowling.model.roll.IRoll;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Roll list to frame list parser.
+ * @author Laura Bruges
+ */
 public class FrameParser implements IParser<List<IRoll>, List<IFrame>> {
 
     private static final FrameFactory FRAME_FACTORY = new FrameFactory();

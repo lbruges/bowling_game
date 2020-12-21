@@ -37,11 +37,6 @@ public class Game implements BoardSubject {
     }
 
     @Override
-    public void unregisterObserver(BoardObserver observer) {
-        observers.remove(observer);
-    }
-
-    @Override
     public void notifyObservers() {
         for (BoardObserver o : observers) {
             o.update(playerName, frameList, scoreList);

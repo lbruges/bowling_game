@@ -10,8 +10,20 @@ import com.lbruges.bowling.model.roll.IRoll;
 
 import java.util.List;
 
+/**
+ * Frame factory.
+ *
+ * @author Laura Bruges
+ */
 public class FrameFactory {
 
+    /**
+     * Creates a frame based on knocked down pins per single roll or roll pair.
+     * @param rolls roll list
+     * @param i current roll index
+     * @return a frame list
+     * @throws ApplicationException in case any input validation fails
+     */
     public IFrame getFrame(List<IRoll> rolls, int i) throws ApplicationException {
         IRoll firstRoll = rolls.get(i);
 

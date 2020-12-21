@@ -9,6 +9,11 @@ import com.lbruges.bowling.model.roll.IRoll;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * String roll list to IRoll list parser.
+ *
+ * @author Laura Bruges
+ */
 public class RollParser implements IParser<List<String>, List<IRoll>> {
 
     private static final RollFactory ROLL_FACTORY = new RollFactory();

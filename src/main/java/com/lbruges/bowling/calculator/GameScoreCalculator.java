@@ -11,11 +11,20 @@ import java.util.List;
 
 import static com.lbruges.bowling.model.frame.FrameType.STRIKE;
 
+/**
+ * Holds the logic for game score calculation.
+ *
+ * @author Laura Bruges
+ */
 @AllArgsConstructor
 public class GameScoreCalculator {
 
     private List<IFrame> frames;
 
+    /**
+     * Calculates the score per frame.
+     * @return a list with scores per frame
+     */
     public List<IScore> scoreGame() {
         List<IScore> scores = new LinkedList<>();
         int score = 0;

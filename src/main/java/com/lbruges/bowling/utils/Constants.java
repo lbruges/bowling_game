@@ -1,5 +1,10 @@
 package com.lbruges.bowling.utils;
 
+/**
+ * Application constants.
+ *
+ * @author Laura Bruges
+ */
 public class Constants {
 
     public static final String DEFAULT_FILENAME = "bowling_game.txt";

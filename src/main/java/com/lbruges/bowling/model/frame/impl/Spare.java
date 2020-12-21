@@ -6,6 +6,11 @@ import com.lbruges.bowling.model.roll.IRoll;
 
 import static com.lbruges.bowling.utils.UtilFunctions.getValueWithTabFormat;
 
+/**
+ * Spare frame representation (all 10 pins knocked down on the two allowed rolls).
+ *
+ * @author Laura Bruges
+ */
 public class Spare extends AbstractFrame {
 
     public Spare(IRoll firstRoll, IRoll secondRoll) {

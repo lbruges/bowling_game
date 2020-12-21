@@ -4,6 +4,11 @@ import java.util.Collection;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
+/**
+ * Simple string utilities.
+ *
+ * @author Laura Bruges
+ */
 public class UtilFunctions {
 
     private static final String TAB_FORMAT = "%s\t";

@@ -1,5 +1,10 @@
 package com.lbruges.bowling.exception;
 
+/**
+ * Custom application exception.
+ *
+ * @author Laura Bruges
+ */
 public class ApplicationException extends Exception {
 
     public ApplicationException(ExceptionEnum exceptionEnum) {

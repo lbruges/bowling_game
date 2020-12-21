@@ -2,6 +2,11 @@ package com.lbruges.bowling.exception;
 
 import lombok.Getter;
 
+/**
+ * Possible exceptions codification and description.
+ *
+ * @author Laura Bruges
+ */
 @Getter
 public enum ExceptionEnum {
 

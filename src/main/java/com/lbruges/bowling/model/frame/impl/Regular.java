@@ -6,6 +6,11 @@ import com.lbruges.bowling.model.roll.IRoll;
 
 import static com.lbruges.bowling.utils.UtilFunctions.getValueWithTabFormat;
 
+/**
+ * Regular frame representation (total knocked pins less than 10).
+ *
+ * @author Laura Bruges
+ */
 public class Regular extends AbstractFrame {
 
     public Regular(IRoll firstRoll, IRoll secondRoll) {
